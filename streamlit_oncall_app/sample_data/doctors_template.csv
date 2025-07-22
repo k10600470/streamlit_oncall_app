@@ -1,0 +1,4 @@
+doctor_id,name,cannot_mon,cannot_tue,cannot_wed,cannot_thu,cannot_fri,cannot_sat,cannot_sun
+1,Dr.A,0,0,1,0,0,0,1
+2,Dr.B,0,1,0,0,0,0,0
+3,Dr.C,0,0,0,1,0,0,0
