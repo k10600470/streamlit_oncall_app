@@ -1,7 +1,23 @@
-import streamlit as st
-st.write("keys in secrets:", list(st.secrets.keys()))
-st.write("has gcp_service_account:", "gcp_service_account" in st.secrets)
-st.write("has SHEET_ID:", "SHEET_ID" in st.secrets)
+import streamlit as st, json
+
+sa = st.secrets.get("gcp_service_account")
+sid = st.secrets.get("SHEET_ID")
+
+if not sa:
+    st.warning("一時対応：サービスアカウントJSONを貼ってください（外部公開しないでください）")
+    txt = st.text_area("Service Account JSON", height=200)
+    if not txt:
+        st.stop()
+    sa = json.loads(txt)
+
+if not sid:
+    sid = st.text_input("SHEET_ID を入力してください")
+    if not sid:
+        st.stop()
+
+service_account_info = dict(sa)
+sheet_id = sid
+
 
 
 import streamlit as st
