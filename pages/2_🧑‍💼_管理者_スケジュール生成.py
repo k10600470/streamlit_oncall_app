@@ -1,7 +1,8 @@
 import streamlit as st
-st.write("secrets keys:", list(st.secrets.keys()))
+st.write("keys in secrets:", list(st.secrets.keys()))
 st.write("has gcp_service_account:", "gcp_service_account" in st.secrets)
 st.write("has SHEET_ID:", "SHEET_ID" in st.secrets)
+
 
 import streamlit as st
 import pandas as pd
